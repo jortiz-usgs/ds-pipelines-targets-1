@@ -18,6 +18,6 @@ create_diag_log = function(data, out_filepath) {
   ans = whisker.render(template_1 %>%
                          str_remove_all('\n') %>%
                          str_replace_all('  ', ' '), render_data )
-  cat(ans, file = file.path(out_filepath))
-  return(ans)
+  cat(ans, file = out_filepath)
+  return(out_filepath)
 }
