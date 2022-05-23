@@ -9,7 +9,7 @@ source('2_process/src/02_prep_data_for_plots.R')
 source('3_visualize/src/03_draw_plot.R')
 source('3_visualize/src/04_create_diag_log.R')
 
-tar_option_set(packages = c("tidyverse", "sbtools", "whisker"))
+tar_option_set(packages = c("readr", "dplyr", "stringr" ,"tidyverse", "sbtools", "whisker"))
 list(
   # Get the data from ScienceBase
   tar_target(
