@@ -1,5 +1,8 @@
 # create diagnostic log txt file
-create_diag_log = function(data, out_filepath) {
+create_diag_log = function(data, out_file) {
+  # create output folder
+  dir_out = "3_visualize/out/"
+  
   render_data <- list(pgdl_980mean = filter(data, model_type == 'pgdl', exper_id == "similar_980") %>% pull(rmse) %>% mean %>% round(2),
                       dl_980mean = filter(data, model_type == 'dl', exper_id == "similar_980") %>% pull(rmse) %>% mean %>% round(2),
                       pb_980mean = filter(data, model_type == 'pb', exper_id == "similar_980") %>% pull(rmse) %>% mean %>% round(2),
@@ -18,6 +21,6 @@ create_diag_log = function(data, out_filepath) {
   ans = whisker.render(template_1 %>%
                          str_remove_all('\n') %>%
                          str_replace_all('  ', ' '), render_data )
-  cat(ans, file = out_filepath)
-  return(out_filepath)
+  cat(ans, file = paste0(dir_out, out_file))
+  return(out_file)
 }
