@@ -1,0 +1,11 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+eval_data|stem|e36e77ce8649ae90|ed65224431e9fc66|97d9972409df8607|342377258||t19135.7068477239s|626dfaf251c7cf97|1276|rds|vector|||0.71||
+draw_plot|function|bcfb5ebbda5b7ee4||||||||||||||
+get_data|function|50df3e093266155d||||||||||||||
+write_csv_return|function|18e5312450b967d0||||||||||||||
+create_diag_log|function|b69fe670e0d06b5f||||||||||||||
+prep_data_for_plots|function|04eafc0ce333e829||||||||||||||
+model_RMSEs_csv|stem|43b999a50fce98ef|bbfcf12f94e79ed4|3bafe2df2b9e7672|-109284820|1_fetch/out/model_RMSEs.csv|t19180.6907223392s|5dda5f72d8edf133|4112|file|vector|||2.42||
+model_summary_results_csv|stem|867d4e969945224c|985346a2a65cc7d6|5789d8cd5f38799f|-1997167944|2_process/out/model_summary_results.csv|t19180.6907244616s|a4e529d8556fb927|4321|file|vector|||0.16||
+figure_1_png|stem|f49f69c12da7e2f5|5b78e5767b1dcaf1|bd98a160fff44414|-1315804071|3_visualize/out/figure_1.png|t19180.6907291232s|96e39e3ddce340a6|37123|file|vector|||0.4||
+model_diagnostic_text_txt|stem|3fd8bf6682de3d97|8dc351ef694c6189|adc6af2d2117da08|-1271344417|3_visualize/out/model_diagnostic_text.txt|t19180.6907304996s|3d37eaa4f2be29d5|649|file|vector|||0.11||
