@@ -22,5 +22,5 @@ create_diag_log = function(data, out_file) {
                          str_remove_all('\n') %>%
                          str_replace_all('  ', ' '), render_data )
   cat(ans, file = paste0(dir_out, out_file))
-  return(out_file)
+  return(paste0(dir_out, out_file))
 }
