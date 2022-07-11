@@ -1,6 +1,7 @@
-# this function returns the evaulated data plots
+# this function returns the evaluated data plots
 
-draw_plot = function(eval_data, directory) {
+draw_plot = function(data, out_file) {
+  png(file = out_file, width = 8, height = 10, res = 200, units = 'in')
   par(omi = c(0,0,0.05,0.05), mai = c(1,1,0,0), las = 1, mgp = c(2,.5,0), cex = 1.5)
   
   plot(NA, NA, xlim = c(2, 1000), ylim = c(4.7, 0.75),
@@ -16,7 +17,7 @@ draw_plot = function(eval_data, directory) {
     mutate(dl = -pgdl, pb = 0, n_prof = n_profs)
   
   for (mod in c('pb','dl','pgdl')){
-    mod_data <- filter(eval_data, model_type == mod)
+    mod_data <- filter(data, model_type == mod)
     mod_profiles <- unique(mod_data$n_prof)
     for (mod_profile in mod_profiles){
       d <- filter(mod_data, n_prof == mod_profile) %>% summarize(y0 = min(rmse), y1 = max(rmse), col = unique(col))
@@ -39,4 +40,7 @@ draw_plot = function(eval_data, directory) {
   
   points(2.2, 1.09, col = '#1b9e77', pch = 21, bg = 'white', lwd = 2.5, cex = 1.5)
   text(2.3, 1.1, 'Process-Based', pos = 4, cex = 1.1)
+  
+  dev.off()
+  return(out_file)
 }
