@@ -1,12 +1,7 @@
 # this function returns the evaluated data plots
 
 draw_plot = function(data, out_file) {
-  # create output folder
-  dir_out = "3_visualize/out/" 
-  dir.create(dir_out)
-  write.table(NA , file=paste0(dir_out, "placeholder.txt"), row.names = F, col.names = F)
-  
-  png(file = paste0(dir_out, out_file), width = 8, height = 10, res = 200, units = 'in')
+  png(file = out_file, width = 8, height = 10, res = 200, units = 'in')
   par(omi = c(0,0,0.05,0.05), mai = c(1,1,0,0), las = 1, mgp = c(2,.5,0), cex = 1.5)
   
   plot(NA, NA, xlim = c(2, 1000), ylim = c(4.7, 0.75),
@@ -47,5 +42,5 @@ draw_plot = function(data, out_file) {
   text(2.3, 1.1, 'Process-Based', pos = 4, cex = 1.1)
   
   dev.off()
-  return(paste0(dir_out, out_file))
+  return(out_file)
 }

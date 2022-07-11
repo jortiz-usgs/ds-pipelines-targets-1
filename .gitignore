@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-*/out/*
 _targets/*
+*/out/*
 !*/out/placeholder.txt
